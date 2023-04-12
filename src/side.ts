@@ -44,6 +44,14 @@ export class Side {
     return this.home;
   }
 
+  getStoneCount(): number {
+    let count = 0;
+    for (let i = 0; i < 6; i++) {
+      count += this.slots[i];
+    }
+    return count;
+  }
+
   canPlay(position: number): boolean {
     return position >= 0 && position <= 5 && this.slots[position] > 0;
   }
